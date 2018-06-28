@@ -4,6 +4,7 @@ require 'aquaman/version'
 module Aquaman
   # Custom errors for expected issues.
   module Errors
+    autoload :Error, 'aquaman/errors/error'
     autoload :HttpUnauthorizedError, 'aquaman/errors/http_unauthorized_error'
     autoload :LoginFailedError, 'aquaman/errors/login_failed_error'
   end
