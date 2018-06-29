@@ -1,35 +1,28 @@
 require 'spec_helper'
+require_relative './shared_context'
 
 RSpec.describe Aquaman::DefaultProviderRequestFactory do
+  include_context 'shared'
+
   subject(:factory) { described_class.new }
 
   describe '#create' do
-    subject { factory.create(url, headers, query) }
-
-    let(:url) { FFaker::Internet.http_url }
-    let(:headers) do
-      {
-        'Accept-Encoding' => 'utf8',
-      }
-    end
-    let(:query) do
-      { a: '1', b: 'qwe' }.with_indifferent_access
-    end
+    subject { factory.create(base_url, http_headers, query_string) }
 
     it 'creates Faraday connection' do
       expect(subject).to be_kind_of(Faraday::Connection)
     end
 
     it 'sets connection url' do
-      expect(subject.url_prefix.to_s).to start_with(url)
+      expect(subject.url_prefix.to_s).to start_with(base_url)
     end
 
     it 'sets request headers' do
-      expect(subject.headers).to include(headers)
+      expect(subject.headers).to include(http_headers)
     end
 
     it 'sets query string' do
-      expect(subject.params).to include(query)
+      expect(subject.params).to include(query_string)
     end
   end
 end

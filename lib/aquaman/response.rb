@@ -1,7 +1,7 @@
 module Aquaman
   # HTTP response.
   class Response
-    def initialize
+    def initialize(status, headers, body)
     end
   end
 end

@@ -1,42 +1,69 @@
 require 'spec_helper'
+require_relative './fakes/fake_provider_request_factory'
+require_relative './shared_context'
 
 RSpec.describe Aquaman::Client do
-  subject(:client) { described_class.new(base_url) }
+  include_context 'shared'
 
-  let(:base_url) { Aquaman::BaseUrl.new }
+  subject(:client) do
+    described_class.new(
+      base_url,
+      provider_request_factory: provider_request_factory
+    )
+  end
 
-  describe '#get' do
-    context 'when session is required' do
-      context 'when session is provided' do
-        subject { client.get(url, session) }
+  let(:base_url) { FFaker::Internet.http_url }
+  let(:provider_request_factory) { FakeProviderRequestFactory.new }
 
-        it 'returns api response' do
-          expect(subject).to be_kind_of(Aquaman::Response)
-        end
-      end
-
-      context 'when session is not provided' do
-        subject { client.get(url) }
-
-        it 'raises unauthorized error' do
-          expect { subject }.to raise_unauthorized_error
-        end
-      end
+  describe '.new' do
+    it 'can be initialized with default provider request factory' do
+      described_class.new(base_url)
     end
   end
 
-  describe '#post' do
-    context 'when session is required' do
-      context 'when session is provided' do
-        
+  describe 'HTTP methods' do
+    let(:url) { '/my/lovely/api' }
+
+    context 'when HTTP method does not support request body' do
+      %w(get delete).each do |verb|
+        describe "#{verb}" do
+          subject do
+            client.send(
+              verb_symbol,
+              url,
+              headers: http_headers,
+              query: query_string
+            )
+          end
+
+          let(:verb_symbol) { verb.to_sym }
+
+          it 'returns response' do
+            expect(subject).to be_kind_of(Aquaman::Response)
+          end
+        end
       end
     end
-  end
 
-  describe '#put' do
-    context 'when session is required' do
-      context 'when session is provided' do
-        
+    context 'when HTTP method supports request body' do
+      %w(post put patch).each do |verb|
+        describe "#{verb}" do
+          subject do
+            client.send(
+              verb_symbol,
+              url,
+              headers: http_headers,
+              query: query_string,
+              body: request_body
+            )
+          end
+
+          let(:verb_symbol) { verb.to_sym }
+
+          it 'returns response' do
+            expect(subject).to be_kind_of(Aquaman::Response)
+          end
+        end
       end
     end
   end
