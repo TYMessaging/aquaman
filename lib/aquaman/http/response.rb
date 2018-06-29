@@ -1,4 +1,4 @@
-module Aquaman
+module Aquaman::HTTP
   # Generic HTTP response.
   class Response
     def initialize(status, headers, body)

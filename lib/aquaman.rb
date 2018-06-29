@@ -1,7 +1,12 @@
 require 'aquaman/version'
 
-# HTTP abstraction layer for building web API clients.
+# Abstraction layer for building API clients.
 module Aquaman
+  module Auth
+    autoload :Login, 'aquaman/login'
+    autoload :Session, 'aquaman/session'
+  end
+
   # Constants used in the library.
   module Const
     autoload :Tokens, 'aquaman/const/tokens'
@@ -14,12 +19,12 @@ module Aquaman
     autoload :LoginFailedError, 'aquaman/errors/login_failed_error'
   end
 
-  autoload :DefaultProviderRequestFactory, 'aquaman/default_provider_request_factory'
-  autoload :DefaultProviderResponseAdapter, 'aquaman/default_provider_response_adapter'
-  autoload :EnvBaseUrl, 'aquaman/env_base_url'
-  autoload :Login, 'aquaman/login'
-  autoload :Session, 'aquaman/session'
-  autoload :Client, 'aquaman/client'
-  autoload :Request, 'aquaman/request'
-  autoload :Response, 'aquaman/response'
+  module HTTP
+    autoload :Client, 'aquaman/http/client'
+    autoload :DefaultProviderRequestFactory, 'aquaman/http/default_provider_request_factory'
+    autoload :DefaultProviderResponseAdapter, 'aquaman/http/default_provider_response_adapter'
+    autoload :EnvBaseUrl, 'aquaman/http/env_base_url'
+    autoload :Request, 'aquaman/http/request'
+    autoload :Response, 'aquaman/http/response'
+  end
 end

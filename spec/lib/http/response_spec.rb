@@ -1,7 +1,7 @@
 require 'spec_helper'
 require_relative 'shared_context'
 
-RSpec.describe Aquaman::Response do
+RSpec.describe Aquaman::HTTP::Response do
   include_context 'shared'
 
   subject(:response) { described_class.new(status, headers, body) }

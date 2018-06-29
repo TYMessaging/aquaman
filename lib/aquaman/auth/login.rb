@@ -1,4 +1,4 @@
-module Aquaman
+module Aquaman::Auth
   # The login process which authenticates user and creates session.
   class Login
     def initialize(username, password)

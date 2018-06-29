@@ -1,4 +1,4 @@
-module Aquaman
+module Aquaman::HTTP
   class DefaultProviderResponseAdapter
     def self.adapt(provider_response)
       Response.new(

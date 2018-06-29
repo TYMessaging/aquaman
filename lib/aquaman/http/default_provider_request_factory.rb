@@ -2,7 +2,7 @@ require 'faraday'
 require 'typhoeus'
 require 'typhoeus/adapters/faraday'
 
-module Aquaman
+module Aquaman::HTTP
   class DefaultProviderRequestFactory
     def initialize(adapter: :typhoeus)
       @adapter = adapter

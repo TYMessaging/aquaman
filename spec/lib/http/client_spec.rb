@@ -1,8 +1,8 @@
 require 'spec_helper'
-require_relative './fakes/fake_provider_request_factory'
+require_relative '../fakes/fake_provider_request_factory'
 require_relative './shared_context'
 
-RSpec.describe Aquaman::Client do
+RSpec.describe Aquaman::HTTP::Client do
   include_context 'shared'
 
   subject(:client) do
@@ -39,7 +39,7 @@ RSpec.describe Aquaman::Client do
           let(:verb_symbol) { verb.to_sym }
 
           it 'returns response' do
-            expect(subject).to be_kind_of(Aquaman::Response)
+            expect(subject).to be_kind_of(Aquaman::HTTP::Response)
           end
         end
       end
@@ -61,7 +61,7 @@ RSpec.describe Aquaman::Client do
           let(:verb_symbol) { verb.to_sym }
 
           it 'returns response' do
-            expect(subject).to be_kind_of(Aquaman::Response)
+            expect(subject).to be_kind_of(Aquaman::HTTP::Response)
           end
         end
       end

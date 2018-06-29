@@ -1,4 +1,4 @@
-module Aquaman
+module Aquaman::HTTP
   # The URL prefix for web API endpoints,
   # which can be taken from environment variables.
   class EnvBaseUrl

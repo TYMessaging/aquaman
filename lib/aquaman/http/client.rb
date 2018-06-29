@@ -1,4 +1,4 @@
-module Aquaman
+module Aquaman::HTTP
   # Generic HTTP client
   class Client
     def initialize(
@@ -16,15 +16,15 @@ module Aquaman
       send_request(:get, url, headers, query)
     end
 
-    def post(url, headers: {}, query: {}, body: Const::Tokens::EMPTY_STRING)
+    def post(url, headers: {}, query: {}, body: DEF_BODY)
       send_request(:post, url, headers, query, body: body)
     end
 
-    def put(url, headers: {}, query: {}, body: Const::Tokens::EMPTY_STRING)
+    def put(url, headers: {}, query: {}, body: DEF_BODY)
       send_request(:put, url, headers, query, body: body)
     end
 
-    def patch(url, headers: {}, query: {}, body: Const::Tokens::EMPTY_STRING)
+    def patch(url, headers: {}, query: {}, body: DEF_BODY)
       send_request(:patch, url, headers, query, body: body)
     end
 
@@ -43,14 +43,18 @@ module Aquaman
       url,
       headers,
       query,
-      body: Const::Tokens::EMPTY_STRING
+      body: DEF_BODY
     )
       request = create_provider_request(base_url, headers, query)
-      provider_response = request.send(verb, url) do |req| 
+      provider_response = request.send(verb, url) do |req|
         req.body = body unless body.empty?
       end
       provider_response_adapter.adapt(provider_response)
     end
+
+    private
+
+    DEF_BODY = Const::Tokens::EMPTY_STRING
 
     def create_provider_request(base_url, headers, query)
       provider_request_factory.create(base_url, headers, query)

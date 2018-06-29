@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Aquaman::EnvBaseUrl do
+RSpec.describe Aquaman::HTTP::EnvBaseUrl do
   subject(:url) do
     described_class.new(
       env_name: base_url_env,

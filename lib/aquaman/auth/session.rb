@@ -1,4 +1,4 @@
-module Aquaman
+module Aquaman::Auth
   # Session is a result of successful authentication.
   class Session
     def initialize(token, expiration_date)
