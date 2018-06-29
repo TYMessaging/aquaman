@@ -54,7 +54,7 @@ module Aquaman::HTTP
 
     private
 
-    DEF_BODY = Const::Tokens::EMPTY_STRING
+    DEF_BODY = Aquaman::Const::Tokens::EMPTY_STRING
 
     def create_provider_request(base_url, headers, query)
       provider_request_factory.create(base_url, headers, query)

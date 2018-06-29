@@ -21,6 +21,7 @@ module Aquaman
 
   module HTTP
     autoload :Client, 'aquaman/http/client'
+    autoload :JsonClient, 'aquaman/http/json_client'
     autoload :DefaultProviderRequestFactory, 'aquaman/http/default_provider_request_factory'
     autoload :DefaultProviderResponseAdapter, 'aquaman/http/default_provider_response_adapter'
     autoload :EnvBaseUrl, 'aquaman/http/env_base_url'
