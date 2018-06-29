@@ -15,9 +15,9 @@ module Aquaman
   end
 
   autoload :DefaultProviderRequestFactory, 'aquaman/default_provider_request_factory'
+  autoload :EnvBaseUrl, 'aquaman/env_base_url'
   autoload :Login, 'aquaman/login'
   autoload :Session, 'aquaman/session'
-  autoload :BaseUrl, 'aquaman/base_url'
   autoload :Client, 'aquaman/client'
   autoload :Request, 'aquaman/request'
   autoload :Response, 'aquaman/response'
