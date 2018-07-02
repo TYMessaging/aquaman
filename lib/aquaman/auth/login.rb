@@ -1,18 +1,18 @@
 module Aquaman::Auth
-  # The login process which authenticates user and creates session.
+  # Base class for login process.
+  # Must be implemented.
   class Login
-    def initialize(username, password)
-      @username = username
-      @password = password
+    def initialize(credentials)
+      @credentials = credentials
       freeze
     end
 
-    def perform
-      raise Errors::LoginError, 'TODO'
+    def enter
+      raise NotImplementedError
     end
 
-    private
+    protected
 
-    attr_reader :username, :password
+    attr_reader :credentials
   end
 end

@@ -1,13 +1,14 @@
 require 'aquaman/version'
 
-# Abstraction layer for building API clients.
+# Abstract layer for building web API clients.
 module Aquaman
+  # Authentication primitives.
   module Auth
-    autoload :Login, 'aquaman/login'
-    autoload :Session, 'aquaman/session'
+    autoload :Login, 'aquaman/auth/login'
+    autoload :Session, 'aquaman/auth/session'
   end
 
-  # Constants used in the library.
+  # Constants used across the library.
   module Const
     autoload :Tokens, 'aquaman/const/tokens'
   end
@@ -15,10 +16,9 @@ module Aquaman
   # Custom errors for expected issues.
   module Errors
     autoload :Error, 'aquaman/errors/error'
-    autoload :HttpUnauthorizedError, 'aquaman/errors/http_unauthorized_error'
-    autoload :LoginFailedError, 'aquaman/errors/login_failed_error'
   end
 
+  # HTTP primitives.
   module HTTP
     autoload :Client, 'aquaman/http/client'
     autoload :JsonClient, 'aquaman/http/json_client'
