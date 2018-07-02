@@ -20,7 +20,7 @@ RSpec.describe Aquaman::Auth::Session do
 
   describe '#state' do
     subject { session.state }
-    
+
     it 'exposes session state' do
       expect(subject).to eq(state)
     end
