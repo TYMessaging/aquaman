@@ -24,6 +24,7 @@ module Aquaman
   # HTTP primitives.
   module HTTP
     autoload :Request, 'aquaman/http/request'
+    autoload :RequestAttributes, 'aquaman/http/request_attributes'
     autoload :JsonRequest, 'aquaman/http/json_request'
     autoload :JsonRequestHeaders, 'aquaman/http/json_request_headers'
 

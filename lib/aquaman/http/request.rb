@@ -3,18 +3,12 @@ module Aquaman::HTTP
   class Request
     def initialize(
       base_url,
-      endpoint:,
-      headers: {},
-      query: {},
-      body: DEF_BODY,
+      attributes: RequestAttributes.new,
       provider_request_factory: ProviderRequestFactory.new,
       provider_response_adapter: ProviderResponseAdapter
     )
       @base_url = base_url
-      @endpoint = endpoint
-      @headers = headers
-      @query = query
-      @body = body
+      @attributes = attributes
       @provider_request_factory = provider_request_factory
       @provider_response_adapter = provider_response_adapter
       freeze
@@ -43,16 +37,14 @@ module Aquaman::HTTP
     protected
 
     attr_reader :base_url,
-                :endpoint,
-                :headers,
-                :query,
-                :body,
+                :attributes,
                 :provider_request_factory,
                 :provider_response_adapter
 
     def send_request(verb)
       request = create_provider_request
-      provider_response = request.send(verb, endpoint) do |req|
+      provider_response = request.send(verb, attributes.endpoint) do |req|
+        body = attributes.body
         req.body = body unless body.empty?
       end
       provider_response_adapter.adapt(provider_response)
@@ -63,7 +55,11 @@ module Aquaman::HTTP
     DEF_BODY = Aquaman::Const::Tokens::EMPTY_STRING
 
     def create_provider_request
-      provider_request_factory.create(base_url, headers, query)
+      provider_request_factory.create(
+        base_url,
+        attributes.headers,
+        attributes.query
+      )
     end
   end
 end

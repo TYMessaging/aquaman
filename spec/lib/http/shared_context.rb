@@ -8,6 +8,8 @@ RSpec.shared_context 'shared', shared_context: :metadata do
     }
   end
 
+  let(:endpoint) { '/my/api' }
+
   let(:query_string) do
     {
       fruit: FFaker::Food.fruit,

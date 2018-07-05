@@ -1,5 +1,5 @@
 module Aquaman::HTTP
-  # JSON HTTP response.
+  # HTTP JSON response.
   class JsonResponse < Response
   end
 end

@@ -3,19 +3,13 @@ module Aquaman::HTTP
   class JsonRequest < Request
     def initialize(
       base_url,
-      endpoint:,
-      headers: {},
-      query: {},
-      body: DEF_BODY,
+      attributes: RequestAttributes.new,
       provider_request_factory: ProviderRequestFactory.new,
       provider_response_adapter: JsonResponseAdapter
     )
       super(
         base_url,
-        endpoint: endpoint,
-        headers: JsonRequestHeaders.new(headers).to_h,
-        query: query,
-        body: body,
+        attributes: attributes,
         provider_request_factory: provider_request_factory,
         provider_response_adapter: provider_response_adapter
       )

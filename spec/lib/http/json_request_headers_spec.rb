@@ -15,8 +15,8 @@ RSpec.describe Aquaman::HTTP::JsonRequestHeaders do
     context 'when original headers are not initialized' do
       let(:original_headers) { nil }
 
-      it 'adds extra headers to empty hash' do
-        expect(subject).not_to be_empty
+      it 'raises argument error' do
+        expect { subject }.to raise_error(ArgumentError)
       end
     end
 

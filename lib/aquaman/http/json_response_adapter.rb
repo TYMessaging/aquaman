@@ -1,4 +1,5 @@
 module Aquaman::HTTP
+  # Adapts internal provider response to Aquaman JSON response object.
   class JsonResponseAdapter
     class << self
       def adapt(provider_response)
@@ -12,10 +13,11 @@ module Aquaman::HTTP
       private
 
       def parse_json(response)
+        body = response.body
         if response_is_json?(response)
-          JSON.parse(response.body, object_class: OpenStruct)
+          JSON.parse(body, object_class: OpenStruct)
         else
-          OpenStruct.new(raw: response.body)
+          OpenStruct.new(raw: body)
         end
       end
 
