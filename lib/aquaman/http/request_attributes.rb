@@ -5,7 +5,7 @@ module Aquaman::HTTP
       endpoint:,
       headers: {},
       query: {},
-      body: DEF_BODY
+      body: Aquaman::Const::Tokens::EMPTY_STRING
     )
       @endpoint = endpoint
       @headers = headers

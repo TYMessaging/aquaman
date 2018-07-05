@@ -6,7 +6,7 @@ module Aquaman::HTTP
       endpoint:,
       headers: {},
       query: {},
-      body: DEF_BODY
+      body: Aquaman::Const::Tokens::EMPTY_STRING
     )
       if !(session && session.is_a?(Aquaman::Auth::Session))
         raise Errors::InvalidSessionError
