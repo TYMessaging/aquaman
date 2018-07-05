@@ -25,6 +25,7 @@ module Aquaman
   module HTTP
     autoload :Request, 'aquaman/http/request'
     autoload :JsonRequest, 'aquaman/http/json_request'
+    autoload :JsonRequestHeaders, 'aquaman/http/json_request_headers'
 
     autoload :Response, 'aquaman/http/response'
     autoload :JsonResponse, 'aquaman/http/json_response'

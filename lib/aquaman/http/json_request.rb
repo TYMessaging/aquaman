@@ -1,4 +1,5 @@
 module Aquaman::HTTP
+  # HTTP request which expects JSON response.
   class JsonRequest < Request
     def initialize(
       base_url,
@@ -9,11 +10,10 @@ module Aquaman::HTTP
       provider_request_factory: ProviderRequestFactory.new,
       provider_response_adapter: JsonResponseAdapter
     )
-      # TODO: accept encoding header.
       super(
         base_url,
         endpoint: endpoint,
-        headers: headers,
+        headers: JsonRequestHeaders.new(headers).to_h,
         query: query,
         body: body,
         provider_request_factory: provider_request_factory,
