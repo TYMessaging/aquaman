@@ -1,4 +1,4 @@
-[![Build Status](https://semaphoreci.com/api/v1/projects/329c796e-d397-4abf-be16-fb4788e03804/2074587/badge.svg)](https://semaphoreci.com/trustyou-messaging/aquaman)
+[![Build Status](https://semaphoreci.com/api/v1/projects/329c796e-d397-4abf-be16-fb4788e03804/2074597/badge.svg)](https://semaphoreci.com/trustyou-messaging/aquaman)
 
 # Aquaman
 
