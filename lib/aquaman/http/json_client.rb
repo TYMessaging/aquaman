@@ -2,8 +2,8 @@ module Aquaman::HTTP
   class JsonClient < Client
     def initialize(
       base_url,
-      provider_request_factory: DefaultProviderRequestFactory.new,
-      provider_response_adapter: DefaultJsonResponseAdapter
+      provider_request_factory: ProviderRequestFactory.new,
+      provider_response_adapter: JsonResponseAdapter
     )
       super(
         base_url,

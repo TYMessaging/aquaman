@@ -22,9 +22,9 @@ module Aquaman
   module HTTP
     autoload :Client, 'aquaman/http/client'
     autoload :JsonClient, 'aquaman/http/json_client'
-    autoload :DefaultProviderRequestFactory, 'aquaman/http/default_provider_request_factory'
-    autoload :DefaultProviderResponseAdapter, 'aquaman/http/default_provider_response_adapter'
-    autoload :DefaultJsonResponseAdapter, 'aquaman/http/default_json_response_adapter'
+    autoload :ProviderRequestFactory, 'aquaman/http/provider_request_factory'
+    autoload :ProviderResponseAdapter, 'aquaman/http/provider_response_adapter'
+    autoload :JsonResponseAdapter, 'aquaman/http/json_response_adapter'
     autoload :EnvBaseUrl, 'aquaman/http/env_base_url'
     autoload :Request, 'aquaman/http/request'
     autoload :Response, 'aquaman/http/response'

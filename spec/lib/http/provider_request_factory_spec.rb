@@ -1,7 +1,7 @@
 require 'spec_helper'
 require_relative './shared_context'
 
-RSpec.describe Aquaman::HTTP::DefaultProviderRequestFactory do
+RSpec.describe Aquaman::HTTP::ProviderRequestFactory do
   include_context 'shared'
 
   subject(:factory) { described_class.new }

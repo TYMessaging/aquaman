@@ -3,8 +3,8 @@ module Aquaman::HTTP
   class Client
     def initialize(
       base_url,
-      provider_request_factory: DefaultProviderRequestFactory.new,
-      provider_response_adapter: DefaultProviderResponseAdapter
+      provider_request_factory: ProviderRequestFactory.new,
+      provider_response_adapter: ProviderResponseAdapter
     )
       @base_url = base_url
       @provider_request_factory = provider_request_factory

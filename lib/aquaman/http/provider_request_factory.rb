@@ -3,7 +3,7 @@ require 'typhoeus'
 require 'typhoeus/adapters/faraday'
 
 module Aquaman::HTTP
-  class DefaultProviderRequestFactory
+  class ProviderRequestFactory
     def initialize(adapter: :typhoeus)
       @adapter = adapter
       freeze

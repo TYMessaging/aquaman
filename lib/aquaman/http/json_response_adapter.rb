@@ -1,5 +1,5 @@
 module Aquaman::HTTP
-  class DefaultJsonResponseAdapter
+  class JsonResponseAdapter
     class << self
       def adapt(provider_response)
         Response.new(

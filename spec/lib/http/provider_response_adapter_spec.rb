@@ -1,7 +1,7 @@
 require 'spec_helper'
 require_relative '../fakes/fake_request'
 
-RSpec.describe Aquaman::HTTP::DefaultProviderResponseAdapter do
+RSpec.describe Aquaman::HTTP::ProviderResponseAdapter do
   subject(:adapter) { described_class }
 
   let(:provider_response) { FakeRequest.new.get }

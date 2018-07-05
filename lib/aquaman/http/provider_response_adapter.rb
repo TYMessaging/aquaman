@@ -1,5 +1,5 @@
 module Aquaman::HTTP
-  class DefaultProviderResponseAdapter
+  class ProviderResponseAdapter
     def self.adapt(provider_response)
       Response.new(
         provider_response.status,
