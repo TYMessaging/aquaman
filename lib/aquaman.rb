@@ -41,6 +41,7 @@ module Aquaman
     module Errors
       autoload :EmptyHeadersError, 'aquaman/http/errors/empty_headers_error'
       autoload :InvalidSessionError, 'aquaman/http/errors/invalid_session_error'
+      autoload :InvalidJsonResponseError, 'aquaman/http/errors/invalid_json_response_error'
     end
   end
 end
