@@ -5,7 +5,10 @@ class FakeRequest
     OpenStruct.new(
       status: 200,
       http_headers: {},
-      body: 'Hello'
+      response_headers: {
+        Aquaman::Const::Headers::CONTENT_TYPE => Aquaman::Const::MimeTypes::JSON,
+      },
+      body: '{ "message": "Hello!" }'
     )
   end
 end

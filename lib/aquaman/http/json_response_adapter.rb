@@ -2,7 +2,7 @@ module Aquaman::HTTP
   class JsonResponseAdapter
     class << self
       def adapt(provider_response)
-        Response.new(
+        JsonResponse.new(
           provider_response.status,
           provider_response.response_headers,
           parse_json(provider_response)
@@ -10,8 +10,6 @@ module Aquaman::HTTP
       end
 
       private
-
-      CONTENT_TYPE_HEADER = 'Content-Type'.freeze
 
       def parse_json(response)
         if response_is_json?(response)
@@ -26,8 +24,8 @@ module Aquaman::HTTP
       end
 
       def valid_content_type?(response)
-        header = response.response_headers[CONTENT_TYPE_HEADER]
-        header =~ Const::Regex::JSON_MIME_TYPE
+        header = response.response_headers[Aquaman::Const::Headers::CONTENT_TYPE]
+        header =~ Aquaman::Const::Regex::JSON_MIME_TYPE
       end
 
       def has_body?(response)
