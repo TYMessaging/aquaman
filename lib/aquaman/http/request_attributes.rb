@@ -1,5 +1,5 @@
 module Aquaman::HTTP
-  # Groupped attributes of API request.
+  # Groupped attributes of an API request.
   class RequestAttributes
     def initialize(
       endpoint:,

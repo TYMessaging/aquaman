@@ -27,6 +27,7 @@ module Aquaman
     autoload :RequestAttributes, 'aquaman/http/request_attributes'
     autoload :JsonRequest, 'aquaman/http/json_request'
     autoload :JsonRequestHeaders, 'aquaman/http/json_request_headers'
+    autoload :SessionRequestAttributes, 'aquaman/http/session_request_attributes'
 
     autoload :Response, 'aquaman/http/response'
     autoload :JsonResponse, 'aquaman/http/json_response'
@@ -35,5 +36,11 @@ module Aquaman
     autoload :ProviderResponseAdapter, 'aquaman/http/provider_response_adapter'
     autoload :JsonResponseAdapter, 'aquaman/http/json_response_adapter'
     autoload :EnvBaseUrl, 'aquaman/http/env_base_url'
+
+    # HTTP errors.
+    module Errors
+      autoload :EmptyHeadersError, 'aquaman/http/errors/empty_headers_error'
+      autoload :InvalidSessionError, 'aquaman/http/errors/invalid_session_error'
+    end
   end
 end

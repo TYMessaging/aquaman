@@ -16,7 +16,9 @@ RSpec.describe Aquaman::HTTP::JsonRequestHeaders do
       let(:original_headers) { nil }
 
       it 'raises argument error' do
-        expect { subject }.to raise_error(ArgumentError)
+        expect { subject }.to raise_error(
+          Aquaman::HTTP::Errors::EmptyHeadersError
+        )
       end
     end
 

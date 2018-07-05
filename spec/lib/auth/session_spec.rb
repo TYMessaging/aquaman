@@ -1,10 +1,10 @@
 require 'spec_helper'
+require_relative 'session_shared_context'
 
 RSpec.describe Aquaman::Auth::Session do
   subject(:session) { described_class.new(state, expiration_date) }
 
-  let(:state) { FFaker::Internet.password }
-  let(:expiration_date) { 7.days.from_now }
+  include_context 'session'
 
   describe '#active?' do
     context 'when session has not expired' do
