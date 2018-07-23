@@ -7,17 +7,23 @@ module Aquaman::HTTP::JSON
     end
 
     def adapt(provider_response)
-      response = AcceptableResponse.new(provider_response)
-      Response.new(
-        response.status,
-        response.response_headers,
-        parse_json(response)
+      to_json_response(
+        AcceptableResponse.new(provider_response)
       )
     end
 
     private
 
     attr_reader :json_string_adapter
+
+    # :reek:FeatureEnvy
+    def to_json_response(response)
+      Response.new(
+        response.status,
+        response.response_headers,
+        parse_json(response)
+      )
+    end
 
     def parse_json(response)
       json_string_adapter.adapt(response.body)
