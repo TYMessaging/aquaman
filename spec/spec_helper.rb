@@ -3,8 +3,17 @@ require 'aquaman'
 require 'ffaker'
 require 'active_support'
 require 'active_support/core_ext'
+require 'simplecov'
 
 Pathname.glob('spec/support/**/*.rb').each { |f| require_relative "../#{f}" }
+
+SimpleCov.start 'rails' do
+  add_filter '/bin/'
+  add_filter '/spec/'
+
+  minimum_coverage 90
+  refuse_coverage_drop
+end
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

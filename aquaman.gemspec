@@ -28,4 +28,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'reek', '~> 4.8', '>= 4.8.2'
   spec.add_development_dependency 'rubocop-airbnb'
   spec.add_development_dependency 'ffaker', '~> 2.9'
+  spec.add_development_dependency 'simplecov'
 end
