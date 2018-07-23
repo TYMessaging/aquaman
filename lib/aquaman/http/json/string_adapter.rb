@@ -9,7 +9,7 @@ module Aquaman::HTTP::JSON
     end
 
     def adapt(json)
-      return output_type.new if json.blank?
+      return default if json.blank?
       ::JSON.parse(json, object_class: output_type)
     end
 

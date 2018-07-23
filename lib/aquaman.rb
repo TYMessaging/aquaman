@@ -27,6 +27,7 @@ module Aquaman
     autoload :RequestAttributes,        'aquaman/http/request_attributes'
     autoload :SessionRequestAttributes, 'aquaman/http/session_request_attributes'
     autoload :Response,                 'aquaman/http/response'
+    autoload :ResponseHeaders,          'aquaman/http/response_headers'
     autoload :ProviderRequestFactory,   'aquaman/http/provider_request_factory'
     autoload :ProviderResponseAdapter,  'aquaman/http/provider_response_adapter'
     autoload :EnvBaseUrl,               'aquaman/http/env_base_url'
@@ -39,16 +40,17 @@ module Aquaman
 
     # JSON parsing API.
     module JSON
-      autoload :AcceptableResponse,   'aquaman/http/json/acceptable_response'
-      autoload :Request,              'aquaman/http/json/request'
-      autoload :RequestHeaders,       'aquaman/http/json/request_headers'
-      autoload :Response,             'aquaman/http/json/response'
-      autoload :ResponseAdapter,      'aquaman/http/json/response_adapter'
-      autoload :StringAdapter,        'aquaman/http/json/string_adapter'
+      autoload :AcceptableResponse,         'aquaman/http/json/acceptable_response'
+      autoload :AcceptableResponseHeaders,  'aquaman/http/json/acceptable_response_headers'
+      autoload :Request,                    'aquaman/http/json/request'
+      autoload :RequestHeaders,             'aquaman/http/json/request_headers'
+      autoload :Response,                   'aquaman/http/json/response'
+      autoload :ResponseAdapter,            'aquaman/http/json/response_adapter'
+      autoload :StringAdapter,              'aquaman/http/json/string_adapter'
 
       # JSON processing errors.
       module Errors
-        autoload :InvalidResponseError, 'aquaman/http/json/errors/invalid_response_error'
+        autoload :UnsupportedContentTypeError, 'aquaman/http/json/errors/unsupported_content_type_error'
       end
     end
   end

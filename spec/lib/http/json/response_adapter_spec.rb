@@ -33,8 +33,8 @@ RSpec.describe Aquaman::HTTP::JSON::ResponseAdapter do
     context 'when response body has unsupported content type' do
       let(:provider_response) { unsupported_content_type_provider_response }
 
-      it 'raises InvalidJsonResponseError' do
-        expect { adapt }.to raise_error(Aquaman::HTTP::JSON::Errors::InvalidResponseError)
+      it 'raises UnsupportedContentTypeError' do
+        expect { adapt }.to raise_error(Aquaman::HTTP::JSON::Errors::UnsupportedContentTypeError)
       end
     end
   end

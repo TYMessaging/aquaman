@@ -7,10 +7,11 @@ module Aquaman::HTTP::JSON
     end
 
     def adapt(provider_response)
+      response = AcceptableResponse.new(provider_response)
       Response.new(
-        provider_response.status,
-        provider_response.response_headers,
-        parse_json(provider_response)
+        response.status,
+        response.response_headers,
+        parse_json(response)
       )
     end
 
@@ -19,15 +20,7 @@ module Aquaman::HTTP::JSON
     attr_reader :json_string_adapter
 
     def parse_json(response)
-      body = response.body
-      return json_string_adapter.default if body.blank?
-      raise Errors::InvalidResponseError, body unless valid_content_type?(response)
-      json_string_adapter.adapt(body)
-    end
-
-    def valid_content_type?(response)
-      header = response.response_headers[Aquaman::Const::Headers::CONTENT_TYPE]
-      header =~ Aquaman::Const::Regex::JSON_MIME_TYPE
+      json_string_adapter.adapt(response.body)
     end
   end
 end
