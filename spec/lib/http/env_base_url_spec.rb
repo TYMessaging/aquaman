@@ -11,6 +11,12 @@ RSpec.describe Aquaman::HTTP::EnvBaseUrl do
   let(:base_url_env) { 'MY_API_BASE_URL' }
   let(:default_url) { FFaker::Internet.http_url }
 
+  describe '.new' do
+    it 'can be initialized with defaults' do
+      expect { described_class.new }.not_to raise_error
+    end
+  end
+
   describe '#to_s' do
     subject { url.to_s }
 

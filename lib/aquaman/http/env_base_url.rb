@@ -3,8 +3,8 @@ module Aquaman::HTTP
   # which can be taken from environment variables.
   class EnvBaseUrl
     def initialize(
-      env_name: Const::Tokens::EMPTY_STRING,
-      default: Const::Tokens::EMPTY_STRING
+      env_name: Aquaman::Const::Tokens::EMPTY_STRING,
+      default: Aquaman::Const::Tokens::EMPTY_STRING
     )
       @env_name = env_name
       @default = default
