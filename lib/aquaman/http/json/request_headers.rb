@@ -1,8 +1,8 @@
-module Aquaman::HTTP
+module Aquaman::HTTP::JSON
   # A decorator that adds required JSON request headers.
-  class JsonRequestHeaders
+  class RequestHeaders
     def initialize(headers)
-      raise Errors::EmptyHeadersError unless headers
+      raise Aquaman::HTTP::Errors::EmptyHeadersError unless headers
       @headers = headers
       @headers[Aquaman::Const::Headers::ACCEPT] = Aquaman::Const::MimeTypes::JSON
       freeze

@@ -1,11 +1,11 @@
-module Aquaman::HTTP
+module Aquaman::HTTP::JSON
   # HTTP request which expects JSON response.
-  class JsonRequest < Request
+  class Request < Aquaman::HTTP::Request
     def initialize(
       base_url,
-      attributes: RequestAttributes.new,
-      provider_request_factory: ProviderRequestFactory.new,
-      provider_response_adapter: JsonResponseAdapter
+      attributes: Aquaman::HTTP::RequestAttributes.new,
+      provider_request_factory: Aquaman::HTTP::ProviderRequestFactory.new,
+      provider_response_adapter: ResponseAdapter.new
     )
       super(
         base_url,

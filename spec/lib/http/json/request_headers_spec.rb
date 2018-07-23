@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Aquaman::HTTP::JsonRequestHeaders do
+RSpec.describe Aquaman::HTTP::JSON::RequestHeaders do
   subject(:headers) { described_class.new(original_headers) }
 
   let(:original_headers) { {} }

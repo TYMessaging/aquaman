@@ -1,6 +1,6 @@
-module Aquaman::HTTP
+module Aquaman::HTTP::JSON
   # Converts JSON string to an object.
-  class JsonStringAdapter
+  class StringAdapter
     DEF_OUTPUT_TYPE = OpenStruct
 
     def initialize(output_type: DEF_OUTPUT_TYPE)
@@ -10,7 +10,11 @@ module Aquaman::HTTP
 
     def adapt(json)
       return output_type.new if json.blank?
-      JSON.parse(json, object_class: output_type)
+      ::JSON.parse(json, object_class: output_type)
+    end
+
+    def default
+      output_type.new
     end
 
     private

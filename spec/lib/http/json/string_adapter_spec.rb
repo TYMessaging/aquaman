@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Aquaman::HTTP::JsonStringAdapter do
+RSpec.describe Aquaman::HTTP::JSON::StringAdapter do
   subject(:adapter) { described_class.new }
 
   let(:default_output_type) { described_class::DEF_OUTPUT_TYPE }
@@ -34,6 +34,14 @@ RSpec.describe Aquaman::HTTP::JsonStringAdapter do
           expect(adapt).to all(be_kind_of(default_output_type))
         end
       end
+    end
+  end
+
+  describe '#default' do
+    subject(:default) { adapter.default }
+
+    it 'returns instance of the output type' do
+      expect(default).to be_kind_of(default_output_type)
     end
   end
 end
