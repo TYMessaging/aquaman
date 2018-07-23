@@ -1,14 +1,17 @@
 require 'spec_helper'
+require_relative './json_shared_context'
 require_relative '../../fakes/fake_request'
 
 RSpec.describe Aquaman::HTTP::JSON::ResponseAdapter do
+  include_context 'http-json'
+
   subject(:adapter) { described_class.new }
 
   describe '#adapt' do
     subject(:adapt) { adapter.adapt(provider_response) }
 
     context 'when response is valid' do
-      let(:provider_response) { FakeRequest.new.get }
+      let(:provider_response) { valid_provider_response }
 
       it 'returns internal JSON response ob ject' do
         expect(subject).to be_kind_of(Aquaman::HTTP::JSON::Response)
@@ -16,11 +19,7 @@ RSpec.describe Aquaman::HTTP::JSON::ResponseAdapter do
     end
 
     context 'when response has empty body' do
-      let(:provider_response) do
-        response = FakeRequest.new.get
-        response.body = ''
-        response
-      end
+      let(:provider_response) { empty_provider_response }
 
       it 'does not raise error' do
         expect { adapt }.not_to raise_error
@@ -32,13 +31,7 @@ RSpec.describe Aquaman::HTTP::JSON::ResponseAdapter do
     end
 
     context 'when response body has unsupported content type' do
-      let(:provider_response) do
-        response = FakeRequest.new.get
-        response.response_headers = {
-          Aquaman::Const::Headers::CONTENT_TYPE => 'text/html',
-        }
-        response
-      end
+      let(:provider_response) { unsupported_content_type_provider_response }
 
       it 'raises InvalidJsonResponseError' do
         expect { adapt }.to raise_error(Aquaman::HTTP::JSON::Errors::InvalidResponseError)

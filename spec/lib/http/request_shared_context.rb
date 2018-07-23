@@ -1,7 +1,7 @@
-require_relative 'shared_context'
+require_relative './http_shared_context'
 
 RSpec.shared_context 'request', shared_context: :metadata do
-  include_context 'shared'
+  include_context 'http'
 
   subject(:request) do
     described_class.new(

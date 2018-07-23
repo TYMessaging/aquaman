@@ -1,9 +1,9 @@
 require 'spec_helper'
-require_relative 'shared_context'
-require_relative 'request_attributes_examples'
+require_relative './http_shared_context'
+require_relative './request_attributes_examples'
 
 RSpec.describe Aquaman::HTTP::RequestAttributes do
-  include_context 'shared'
+  include_context 'http'
   include_examples 'request-attributes'
 
   subject(:attr) do

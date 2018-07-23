@@ -1,9 +1,9 @@
 require 'spec_helper'
-require_relative 'shared_context'
+require_relative './http_shared_context'
 require_relative '../auth/session_shared_context'
 
 RSpec.describe Aquaman::HTTP::SessionRequestAttributes do
-  include_context 'shared'
+  include_context 'http'
   include_context 'session'
   include_examples 'request-attributes'
 

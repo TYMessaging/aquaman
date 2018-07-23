@@ -1,4 +1,4 @@
-RSpec.shared_context 'shared', shared_context: :metadata do
+RSpec.shared_context 'http', shared_context: :metadata do
   let(:base_url) { FFaker::Internet.http_url }
   let(:http_headers) do
     {
