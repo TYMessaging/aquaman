@@ -4,8 +4,9 @@ require 'aquaman/version'
 module Aquaman
   # Authentication primitives.
   module Auth
-    autoload :Login,    'aquaman/auth/login'
-    autoload :Session,  'aquaman/auth/session'
+    autoload :BasicAuthUrl, 'aquaman/auth/basic_auth_url'
+    autoload :Login,        'aquaman/auth/login'
+    autoload :Session,      'aquaman/auth/session'
   end
 
   # Constants used across the library.
@@ -14,6 +15,7 @@ module Aquaman
     autoload :MimeTypes,  'aquaman/const/mime_types'
     autoload :Regex,      'aquaman/const/regex'
     autoload :Tokens,     'aquaman/const/tokens'
+    autoload :Url,        'aquaman/const/url'
   end
 
   # Custom errors for expected issues.
@@ -31,6 +33,7 @@ module Aquaman
     autoload :ProviderRequestFactory,   'aquaman/http/provider_request_factory'
     autoload :ProviderResponseAdapter,  'aquaman/http/provider_response_adapter'
     autoload :EnvBaseUrl,               'aquaman/http/env_base_url'
+    autoload :UrlDecorator,             'aquaman/http/url_decorator'
 
     # HTTP errors.
     module Errors
