@@ -4,9 +4,9 @@ module Aquaman::HTTP
     def initialize(
       session,
       endpoint:,
-      headers: {},
-      query: {},
-      body: Aquaman::Const::Tokens::EMPTY_STRING
+      headers: Default::HEADERS,
+      query: Default::QUERY,
+      body: Default::BODY
     )
       if !(session && session.is_a?(Aquaman::Auth::Session))
         raise Errors::InvalidSessionError
