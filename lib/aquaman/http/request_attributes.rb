@@ -1,11 +1,17 @@
 module Aquaman::HTTP
   # Groupped attributes of an API request.
   class RequestAttributes
+    class Defaults
+      HEADERS = {}.freeze
+      QUERY = {}.freeze
+      BODY = Aquaman::Const::Tokens::EMPTY_STRING
+    end
+
     def initialize(
       endpoint:,
-      headers: {},
-      query: {},
-      body: Aquaman::Const::Tokens::EMPTY_STRING
+      headers: Defaults::HEADERS,
+      query: Defaults::QUERY,
+      body: Defaults::BODY
     )
       @endpoint = endpoint
       @headers = headers
@@ -14,6 +20,9 @@ module Aquaman::HTTP
       freeze
     end
 
-    attr_reader :endpoint, :headers, :query, :body
+    attr_reader :endpoint,
+                :headers,
+                :query,
+                :body
   end
 end
