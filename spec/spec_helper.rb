@@ -12,7 +12,8 @@ SimpleCov.start 'rails' do
   add_filter '/spec/'
 
   minimum_coverage 90
-  refuse_coverage_drop
+  # NOTE: we can't enable refuse because tests are run in parallel.
+  # refuse_coverage_drop
 end
 
 RSpec.configure do |config|
