@@ -10,7 +10,7 @@ module Aquaman::HTTP
 
     def initialize(
       verb,
-      endpoint, 
+      endpoint,
       headers: Defaults::HEADERS,
       query: Defaults::QUERY,
       body: Defaults::BODY
