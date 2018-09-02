@@ -1,9 +1,11 @@
 module Aquaman::HTTP
   # Groupped attributes of an API request, which also include session state.
   class SessionRequestAttributes < RequestAttributes
+    # :reek:LongParameterList
     def initialize(
       session,
-      endpoint:,
+      verb,
+      endpoint,
       headers: Default::HEADERS,
       query: Default::QUERY,
       body: Default::BODY
@@ -13,7 +15,8 @@ module Aquaman::HTTP
       end
       @session = session
       super(
-        endpoint: endpoint,
+        verb,
+        endpoint,
         headers: headers,
         query: query,
         body: body

@@ -7,9 +7,7 @@ RSpec.shared_context 'http', shared_context: :metadata do
       'Accept-Language' => 'en',
     }
   end
-
   let(:endpoint) { '/my/api' }
-
   let(:query_string) do
     {
       fruit: FFaker::Food.fruit,
@@ -17,6 +15,6 @@ RSpec.shared_context 'http', shared_context: :metadata do
       herb_or_spice: FFaker::Food.herb_or_spice,
     }.with_indifferent_access
   end
-
   let(:request_body) { FFaker::Lorem.characters }
+  let(:verb) { :get }
 end

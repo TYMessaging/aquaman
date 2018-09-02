@@ -13,7 +13,8 @@ RSpec.shared_context 'request', shared_context: :metadata do
 
   let(:attributes) do
     Aquaman::HTTP::RequestAttributes.new(
-      endpoint: endpoint,
+      :get,
+      endpoint,
       headers: http_headers,
       query: query_string,
       body: request_body

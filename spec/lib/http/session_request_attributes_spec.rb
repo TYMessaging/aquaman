@@ -11,7 +11,8 @@ RSpec.describe Aquaman::HTTP::SessionRequestAttributes do
   subject(:attr) do
     described_class.new(
       Aquaman::Auth::Session.new(state, expiration_date),
-      endpoint: endpoint,
+      :get,
+      endpoint,
       headers: http_headers,
       query: query_string,
       body: request_body

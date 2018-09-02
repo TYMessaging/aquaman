@@ -2,15 +2,19 @@ module Aquaman::HTTP::JSON
   # Groupped attributes of an API request.
   class RequestAttributes < Aquaman::HTTP::RequestAttributes
     def initialize(
-      endpoint:,
+      verb,
+      endpoint,
       headers: Defaults::HEADERS,
       query: Defaults::QUERY,
       body: Defaults::BODY
     )
-      @endpoint = endpoint
-      @headers = RequestHeaders.new(headers).to_h
-      @query = query
-      @body = body
+      super(
+        verb,
+        endpoint,
+        headers: RequestHeaders.new(headers).to_h,
+        query: query,
+        body: body
+      )
       freeze
     end
   end

@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 RSpec.shared_examples 'request-attributes' do
+  describe '#verb' do
+    it { expect(attr.verb).to eq(verb) }
+  end
+
   describe '#endpoint' do
     it { expect(attr.endpoint).to eq(endpoint) }
   end

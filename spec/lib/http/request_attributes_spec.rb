@@ -8,7 +8,8 @@ RSpec.describe Aquaman::HTTP::RequestAttributes do
 
   subject(:attr) do
     described_class.new(
-      endpoint: endpoint,
+      verb,
+      endpoint,
       headers: http_headers,
       query: query_string,
       body: request_body
