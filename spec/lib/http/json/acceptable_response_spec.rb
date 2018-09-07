@@ -40,9 +40,9 @@ RSpec.describe Aquaman::HTTP::JSON::AcceptableResponse do
     end
   end
 
-  describe '#response_headers' do
+  describe '#headers' do
     it 'is the same as provider response headers' do
-      expect(response.response_headers.contain?(provider_response.response_headers)).to be_truthy
+      expect(response.headers.contain?(provider_response.headers)).to be_truthy
     end
   end
 

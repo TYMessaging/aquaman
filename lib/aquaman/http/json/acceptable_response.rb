@@ -3,13 +3,13 @@ module Aquaman::HTTP::JSON
   class AcceptableResponse
     def initialize(provider_response)
       @status = provider_response.status
-      @response_headers = AcceptableResponseHeaders.new(
-        provider_response.response_headers
+      @headers = AcceptableResponseHeaders.new(
+        provider_response.headers
       )
       @body = provider_response.body
       freeze
     end
 
-    attr_reader :status, :response_headers, :body
+    attr_reader :status, :headers, :body
   end
 end

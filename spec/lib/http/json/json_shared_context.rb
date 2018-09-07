@@ -11,7 +11,7 @@ RSpec.shared_context 'http-json', shared_context: :metadata do
 
   let(:unsupported_content_type_provider_response) do
     response = valid_provider_response
-    response.response_headers = {
+    response.headers = {
       Aquaman::Const::Headers::CONTENT_TYPE => 'text/html',
     }
     response

@@ -4,7 +4,7 @@ require_relative './json_shared_context'
 RSpec.describe Aquaman::HTTP::JSON::AcceptableResponseHeaders do
   include_context 'http-json'
 
-  subject(:headers) { described_class.new(provider_response.response_headers) }
+  subject(:headers) { described_class.new(provider_response.headers) }
 
   let(:provider_response) { valid_provider_response }
 

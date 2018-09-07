@@ -20,7 +20,7 @@ module Aquaman::HTTP::JSON
     def to_json_response(response)
       Response.new(
         response.status,
-        response.response_headers,
+        response.headers,
         parse_json(response)
       )
     end
