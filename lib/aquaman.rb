@@ -4,9 +4,10 @@ require 'aquaman/version'
 module Aquaman
   # Authentication primitives.
   module Auth
-    autoload :BasicAuthUrl, 'aquaman/auth/basic_auth_url'
-    autoload :Login,        'aquaman/auth/login'
-    autoload :Session,      'aquaman/auth/session'
+    autoload :AuthorizationHeader, 'aquaman/auth/authorization_header'
+    autoload :BasicAuthUrl,        'aquaman/auth/basic_auth_url'
+    autoload :Login,               'aquaman/auth/login'
+    autoload :Session,             'aquaman/auth/session'
   end
 
   # Constants used across the library.
@@ -27,7 +28,6 @@ module Aquaman
   module HTTP
     autoload :Request,                  'aquaman/http/request'
     autoload :RequestAttributes,        'aquaman/http/request_attributes'
-    autoload :SessionRequestAttributes, 'aquaman/http/session_request_attributes'
     autoload :Response,                 'aquaman/http/response'
     autoload :ResponseHeaders,          'aquaman/http/response_headers'
     autoload :ProviderRequestFactory,   'aquaman/http/provider_request_factory'
@@ -39,6 +39,11 @@ module Aquaman
     module Errors
       autoload :EmptyHeadersError,    'aquaman/http/errors/empty_headers_error'
       autoload :InvalidSessionError,  'aquaman/http/errors/invalid_session_error'
+    end
+
+    # HTTP headers.
+    module Headers
+      autoload :Header, 'aquaman/http/headers/header'
     end
 
     # JSON parsing API.
