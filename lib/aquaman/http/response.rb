@@ -2,6 +2,7 @@ module Aquaman::HTTP
   # Generic HTTP response.
   class Response
     include ResponseStatusChecks
+    include ResponsePrinting
 
     def initialize(status, headers, body)
       @status = status
@@ -11,5 +12,9 @@ module Aquaman::HTTP
     end
 
     attr_reader :status, :headers, :body
+
+    def to_s
+      print
+    end
   end
 end

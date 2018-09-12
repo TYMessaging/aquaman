@@ -28,6 +28,7 @@ module Aquaman
     autoload :RequestAttributes,        'aquaman/http/request_attributes'
     autoload :Request,                  'aquaman/http/request'
     autoload :ResponseHeaders,          'aquaman/http/response_headers'
+    autoload :ResponsePrinting,         'aquaman/http/response_printing'
     autoload :ResponseStatusChecks,     'aquaman/http/response_status_checks'
     autoload :Response,                 'aquaman/http/response'
     autoload :ProviderRequestFactory,   'aquaman/http/provider_request_factory'
