@@ -25,10 +25,11 @@ module Aquaman
 
   # HTTP primitives.
   module HTTP
-    autoload :Request,                  'aquaman/http/request'
     autoload :RequestAttributes,        'aquaman/http/request_attributes'
-    autoload :Response,                 'aquaman/http/response'
+    autoload :Request,                  'aquaman/http/request'
     autoload :ResponseHeaders,          'aquaman/http/response_headers'
+    autoload :ResponseStatusChecks,     'aquaman/http/response_status_checks'
+    autoload :Response,                 'aquaman/http/response'
     autoload :ProviderRequestFactory,   'aquaman/http/provider_request_factory'
     autoload :ProviderResponseAdapter,  'aquaman/http/provider_response_adapter'
     autoload :EnvBaseUrl,               'aquaman/http/env_base_url'
