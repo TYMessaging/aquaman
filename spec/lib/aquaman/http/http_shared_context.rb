@@ -7,7 +7,7 @@ RSpec.shared_context 'http', shared_context: :metadata do
       'Accept-Language' => 'en',
     }
   end
-  let(:endpoint) { '/my/api' }
+  let(:endpoint) { '/api/v1/namespace/resource' }
   let(:query_string) do
     {
       fruit: FFaker::Food.fruit,

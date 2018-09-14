@@ -1,6 +1,5 @@
 require 'spec_helper'
 require_relative './json_shared_context'
-require_relative '../../fakes/fake_request'
 
 RSpec.describe Aquaman::HTTP::JSON::ResponseAdapter do
   include_context 'http-json'
@@ -34,7 +33,9 @@ RSpec.describe Aquaman::HTTP::JSON::ResponseAdapter do
       let(:provider_response) { unsupported_content_type_provider_response }
 
       it 'raises UnsupportedContentTypeError' do
-        expect { adapt }.to raise_error(Aquaman::HTTP::JSON::Errors::UnsupportedContentTypeError)
+        expect { adapt }.to raise_error(
+          Aquaman::HTTP::JSON::Errors::UnsupportedContentTypeError
+        )
       end
     end
   end

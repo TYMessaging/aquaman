@@ -1,10 +1,12 @@
 require 'spec_helper'
-require_relative '../fakes/fake_request'
+require_relative './request_shared_context'
 
 RSpec.describe Aquaman::HTTP::ProviderResponseAdapter do
+  include_context 'request'
+
   subject(:adapter) { described_class }
 
-  let(:provider_response) { FakeRequest.new.get }
+  let(:provider_response) { successful_provider_response }
 
   describe '.adapt' do
     subject { adapter.adapt(provider_response) }

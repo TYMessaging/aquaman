@@ -21,7 +21,9 @@ RSpec.describe Aquaman::HTTP::JSON::AcceptableResponseHeaders do
       let(:provider_response) { unsupported_content_type_provider_response }
 
       it 'raises UnsupportedContentTypeError' do
-        expect { create }.to raise_error(Aquaman::HTTP::JSON::Errors::UnsupportedContentTypeError)
+        expect { create }.to raise_error(
+          Aquaman::HTTP::JSON::Errors::UnsupportedContentTypeError
+        )
       end
     end
   end

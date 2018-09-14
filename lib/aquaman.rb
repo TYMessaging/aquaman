@@ -25,21 +25,24 @@ module Aquaman
 
   # HTTP primitives.
   module HTTP
-    autoload :RequestAttributes,        'aquaman/http/request_attributes'
-    autoload :Request,                  'aquaman/http/request'
-    autoload :ResponseHeaders,          'aquaman/http/response_headers'
-    autoload :ResponsePrinting,         'aquaman/http/response_printing'
-    autoload :ResponseStatusChecks,     'aquaman/http/response_status_checks'
-    autoload :Response,                 'aquaman/http/response'
-    autoload :ProviderRequestFactory,   'aquaman/http/provider_request_factory'
-    autoload :ProviderResponseAdapter,  'aquaman/http/provider_response_adapter'
-    autoload :EnvBaseUrl,               'aquaman/http/env_base_url'
-    autoload :UrlDecorator,             'aquaman/http/url_decorator'
+    autoload :RequestAttributes,          'aquaman/http/request_attributes'
+    autoload :Request,                    'aquaman/http/request'
+    autoload :ResponseHeaders,            'aquaman/http/response_headers'
+    autoload :ResponsePrinting,           'aquaman/http/response_printing'
+    autoload :ResponseStatusChecks,       'aquaman/http/response_status_checks'
+    autoload :Response,                   'aquaman/http/response'
+    autoload :ProviderRequestFactory,     'aquaman/http/provider_request_factory'
+    autoload :ProviderResponseAdapter,    'aquaman/http/provider_response_adapter'
+    autoload :EnvBaseUrl,                 'aquaman/http/env_base_url'
+    autoload :SuccessfulProviderResponse, 'aquaman/http/successful_provider_response'
+    autoload :UrlDecorator,               'aquaman/http/url_decorator'
 
     # HTTP errors.
     module Errors
-      autoload :EmptyHeadersError,    'aquaman/http/errors/empty_headers_error'
-      autoload :InvalidSessionError,  'aquaman/http/errors/invalid_session_error'
+      autoload :EmptyHeadersError,       'aquaman/http/errors/empty_headers_error'
+      autoload :InvalidSessionError,     'aquaman/http/errors/invalid_session_error'
+      autoload :InvalidProviderResponse, 'aquaman/http/errors/invalid_provider_response'
+      autoload :RequestFailedError,      'aquaman/http/errors/request_failed_error'
     end
 
     # HTTP headers.

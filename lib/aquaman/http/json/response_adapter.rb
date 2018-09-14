@@ -8,7 +8,11 @@ module Aquaman::HTTP::JSON
 
     def adapt(provider_response)
       to_json_response(
-        AcceptableResponse.new(provider_response)
+        AcceptableResponse.new(
+          Aquaman::HTTP::SuccessfulProviderResponse.new(
+            provider_response
+          )
+        )
       )
     end
 

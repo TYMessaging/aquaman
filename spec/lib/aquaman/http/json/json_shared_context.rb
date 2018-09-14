@@ -1,7 +1,9 @@
-require_relative '../../fakes/fake_request'
+require_relative '../request_shared_context'
 
 RSpec.shared_context 'http-json', shared_context: :metadata do
-  let(:valid_provider_response) { FakeRequest.new.get }
+  include_context 'request'
+
+  let(:valid_provider_response) { successful_provider_response }
 
   let(:empty_provider_response) do
     response = valid_provider_response

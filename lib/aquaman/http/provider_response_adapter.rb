@@ -1,12 +1,24 @@
 module Aquaman::HTTP
   # Adapts internal provider response to Aquaman response.
   class ProviderResponseAdapter
-    def self.adapt(provider_response)
-      Response.new(
-        provider_response.status,
-        provider_response.headers,
-        provider_response.body
-      )
+    class << self
+      def adapt(provider_response)
+        to_response(
+          SuccessfulProviderResponse.new(
+            provider_response
+          )
+        )
+      end
+
+      private
+
+      def to_response(response)
+        Response.new(
+          response.status,
+          response.headers,
+          response.body
+        )
+      end
     end
   end
 end
