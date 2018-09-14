@@ -1,4 +1,5 @@
 [![Build Status](https://semaphoreci.com/api/v1/projects/329c796e-d397-4abf-be16-fb4788e03804/2074597/badge.svg)](https://semaphoreci.com/trustyou-messaging/aquaman)
+[![Maintainability](https://api.codeclimate.com/v1/badges/5b17feeea6903d2383b9/maintainability)](https://codeclimate.com/github/TYMessaging/aquaman/maintainability)
 
 # Aquaman
 
