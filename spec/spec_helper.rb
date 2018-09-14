@@ -11,7 +11,7 @@ SimpleCov.start 'rails' do
   add_filter '/bin/'
   add_filter '/spec/'
 
-  minimum_coverage 90
+  # minimum_coverage 90
   # NOTE: we can't enable refuse because tests are run in parallel.
   # refuse_coverage_drop
 end
