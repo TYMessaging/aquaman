@@ -1,6 +1,8 @@
 module Aquaman::HTTP
   # Generic HTTP request to an API.
   class Request
+    include RequestPrinting
+
     def initialize(
       base_url,
       attributes: RequestAttributes.new,
@@ -18,6 +20,10 @@ module Aquaman::HTTP
       request = create_provider_request
       provider_response = send_provider_request(request)
       provider_response_adapter.adapt(provider_response)
+    end
+
+    def to_s
+      print
     end
 
     protected

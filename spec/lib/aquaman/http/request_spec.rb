@@ -18,4 +18,12 @@ RSpec.describe Aquaman::HTTP::Request do
       it { expect { response }.to raise_error(Aquaman::HTTP::Errors::RequestFailedError) }
     end
   end
+
+  describe '#to_s' do
+    subject(:printed) { request.to_s }
+
+    it { puts printed; expect(printed).to include(verb.to_s.upcase) }
+    it { expect(printed).to include(endpoint) }
+    it { expect(printed).to include(request_body) }
+  end
 end
