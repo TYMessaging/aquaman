@@ -34,6 +34,7 @@ module Aquaman
     autoload :ProviderRequestFactory,     'aquaman/http/provider_request_factory'
     autoload :ProviderResponseAdapter,    'aquaman/http/provider_response_adapter'
     autoload :EnvBaseUrl,                 'aquaman/http/env_base_url'
+    autoload :PrintableProviderResponse,  'aquaman/http/printable_provider_response'
     autoload :SuccessfulProviderResponse, 'aquaman/http/successful_provider_response'
     autoload :UrlDecorator,               'aquaman/http/url_decorator'
 

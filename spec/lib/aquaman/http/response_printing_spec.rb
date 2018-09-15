@@ -11,17 +11,17 @@ RSpec.describe Aquaman::HTTP::Response do
   let(:body) { request_body }
 
   describe '#print' do
-    subject(:result) { response.print }
+    subject(:printed) { response.print }
 
-    it { expect(result).to be_kind_of(String) }
-    it { expect(result).not_to be_empty }
-    it { expect(result).to include("#{status}") }
-    it { expect(result).to include(body) }
+    it { expect(printed).to be_kind_of(String) }
+    it { expect(printed).not_to be_empty }
+    it { expect(printed).to include("#{status}") }
+    it { expect(printed).to include(body) }
 
     it 'prints headers' do
       headers.each do |name, value|
-        expect(result).to include(name)
-        expect(result).to include(value)
+        expect(printed).to include(name)
+        expect(printed).to include(value)
       end
     end
   end
