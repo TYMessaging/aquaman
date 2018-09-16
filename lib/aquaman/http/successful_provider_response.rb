@@ -39,7 +39,12 @@ module Aquaman::HTTP
 
     def validate_status
       if failed?
-        raise Aquaman::HTTP::Errors::RequestFailedError.new(response)
+        raise Aquaman::HTTP::Errors::RequestFailedError.new(
+          response,
+          status,
+          headers,
+          body
+        )
       end
     end
   end
