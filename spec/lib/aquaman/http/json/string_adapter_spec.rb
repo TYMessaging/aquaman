@@ -20,7 +20,7 @@ RSpec.describe Aquaman::HTTP::JSON::StringAdapter do
       end
 
       it 'parses JSON' do
-        expect(adapt.foo).to eq('bar')
+        expect(adapt['foo']).to eq('bar')
       end
 
       context 'when JSON string contains array' do

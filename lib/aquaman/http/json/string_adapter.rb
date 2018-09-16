@@ -1,7 +1,7 @@
 module Aquaman::HTTP::JSON
   # Converts JSON string to an object.
   class StringAdapter
-    DEF_OUTPUT_TYPE = OpenStruct
+    DEF_OUTPUT_TYPE = Hash
 
     def initialize(output_type: DEF_OUTPUT_TYPE)
       @output_type = output_type
