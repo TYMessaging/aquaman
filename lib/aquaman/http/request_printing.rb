@@ -16,7 +16,6 @@ module Aquaman::HTTP
     end
 
     def print_body
-      return Aquaman::Tokens::EMPTY_STRING if body.blank?
       body
     end
   end
