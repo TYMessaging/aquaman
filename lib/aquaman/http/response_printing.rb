@@ -12,7 +12,7 @@ module Aquaman::HTTP
     end
 
     def print_headers
-      return Aquaman::Tokens::EMPTY_STRING if headers.blank?
+      return headers if headers.blank?
       headers_string = ''
       headers.each do |name, value|
         headers_string << "#{name}: #{value}\n"
@@ -21,7 +21,6 @@ module Aquaman::HTTP
     end
 
     def print_body
-      return Aquaman::Tokens::EMPTY_STRING if body.blank?
       body
     end
   end
