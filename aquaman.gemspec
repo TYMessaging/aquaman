@@ -10,16 +10,6 @@ Gem::Specification.new do |spec|
   spec.summary       = 'HTTP abstraction layer for building web API clients'
   spec.homepage      = 'https://github.com/TYMessaging/aquaman'
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    # NOTE: this server doesn't exist. We use git for gem distribution.
-    spec.metadata['allowed_push_host'] = 'https://NNGgimrSs98xD9wsxo31@gem.fury.io/ty-messaging/'
-  else
-    raise 'RubyGems 2.0 or newer is required to protect against ' \
-      'public gem pushes.'
-  end
-
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
