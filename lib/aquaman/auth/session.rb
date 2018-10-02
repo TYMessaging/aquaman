@@ -10,7 +10,7 @@ module Aquaman::Auth
     attr_reader :state
 
     def active?
-      expiration_date > Time.now
+      expiration_date > Time.now.utc
     end
 
     protected
