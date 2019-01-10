@@ -16,7 +16,7 @@ module Aquaman::HTTP::Adapters::Typhoeus
     # :reek:UtilityFunction
     def ssl_disable_verification
       if ENV['TYPHOEUS_DISABLE_SSL_VERIFIFACTION'] == 'yes'
-        return { ssl: { verify: false } }
+        return { disable_ssl_peer_verification: true }
       end
       {}
     end

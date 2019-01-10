@@ -19,7 +19,7 @@ RSpec.describe Aquaman::HTTP::Adapters::Typhoeus::Adapter do
 
       after(:example) { ENV['TYPHOEUS_DISABLE_SSL_VERIFIFACTION'] = nil }
 
-      it { expect(options).to eq({ ssl: { verify: false } }) }
+      it { expect(options).to eq({ disable_ssl_peer_verification: true }) }
     end
   end
 end
