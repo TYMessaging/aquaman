@@ -5,7 +5,7 @@ require 'typhoeus/adapters/faraday'
 module Aquaman::HTTP
   # Creates request objects of internally used HTTP provider.
   class ProviderRequestFactory
-    def initialize(adapter: :typhoeus)
+    def initialize(adapter: Aquaman::HTTP::Adapters::Typhoeus::Adapter.new)
       @adapter = adapter
       freeze
     end
@@ -15,7 +15,7 @@ module Aquaman::HTTP
       Faraday.new(url: url) do |conn|
         conn.params.merge!(query) unless query.empty?
         conn.headers.merge!(headers) unless headers.empty?
-        conn.adapter adapter
+        conn.adapter adapter.name, adapter.options
       end
     end
 

@@ -39,6 +39,16 @@ module Aquaman
     autoload :SuccessfulProviderResponse, 'aquaman/http/successful_provider_response'
     autoload :UrlDecorator,               'aquaman/http/url_decorator'
 
+    # Request adapters.
+    module Adapters
+      autoload :FaradayAdapter, 'aquaman/http/adapters/faraday_adapter'
+
+      # Typhoeus Faraday adapter.
+      module Typhoeus
+        autoload :Adapter, 'aquaman/http/adapters/typhoeus/adapter'
+      end
+    end
+
     # HTTP errors.
     module Errors
       autoload :EmptyHeadersError,       'aquaman/http/errors/empty_headers_error'
