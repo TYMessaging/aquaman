@@ -54,6 +54,7 @@ module Aquaman
       autoload :EmptyHeadersError,       'aquaman/http/errors/empty_headers_error'
       autoload :InvalidSessionError,     'aquaman/http/errors/invalid_session_error'
       autoload :InvalidProviderResponse, 'aquaman/http/errors/invalid_provider_response'
+      autoload :RequestError,            'aquaman/http/errors/request_error'
       autoload :RequestFailedError,      'aquaman/http/errors/request_failed_error'
     end
 

@@ -2,7 +2,7 @@ module Aquaman::HTTP
   # Response extension which adds printing that can be used in debugging.
   module ResponsePrinting
     def print
-      "#{self.class}:\n#{print_status}\n#{print_headers}\n\n#{print_body}"
+      "#{print_status}\n#{print_headers}\n#{print_body}"
     end
 
     private

@@ -12,7 +12,7 @@ module Aquaman::HTTP::Errors
       @headers = headers
       @body = body
       super(
-        "Requested back-end responded failure:\n#{decorator_type.new(response)}"
+        "Requested back-end responded failure.\n#{decorator_type.new(response)}"
       )
       freeze
     end

@@ -15,7 +15,7 @@ RSpec.describe Aquaman::HTTP::Request do
     context 'when back-end responded failure' do
       let(:provider_request_factory) { failed_provider_request_factory }
 
-      it { expect { response }.to raise_error(Aquaman::HTTP::Errors::RequestFailedError) }
+      it { expect { response }.to raise_error(Aquaman::HTTP::Errors::RequestError) }
     end
   end
 

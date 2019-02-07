@@ -2,7 +2,7 @@ module Aquaman::HTTP
   # Request extension which adds printing that can be used in debugging.
   module RequestPrinting
     def print
-      "#{self.class}:\n#{print_verb} #{print_url}\n\n#{print_body}"
+      "#{self.class}\n#{print_verb} #{print_url}\n\n#{print_body}"
     end
 
     private

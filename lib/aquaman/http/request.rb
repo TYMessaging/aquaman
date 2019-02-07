@@ -20,6 +20,8 @@ module Aquaman::HTTP
       request = create_provider_request
       provider_response = send_provider_request(request)
       provider_response_adapter.adapt(provider_response)
+    rescue => inner_error
+      raise Aquaman::HTTP::Errors::RequestError.new(self, inner_error)
     end
 
     def to_s
