@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    aquaman (0.1.24)
+    aquaman (0.1.25)
       activesupport (= 5.2.4.1)
       faraday (~> 0.9)
       typhoeus (~> 1.3)
