@@ -1,3 +1,3 @@
 module Aquaman
-  VERSION = '0.1.24'.freeze
+  VERSION = '0.1.25'.freeze
 end
