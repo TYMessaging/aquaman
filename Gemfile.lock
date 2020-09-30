@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    aquaman (0.1.25)
+    aquaman (0.1.26)
       activesupport (= 5.2.4.3)
       faraday (~> 0.9)
       typhoeus (~> 1.3)
@@ -23,7 +23,7 @@ GEM
       virtus (~> 1.0)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
-    concurrent-ruby (1.1.6)
+    concurrent-ruby (1.1.7)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.3)
@@ -34,13 +34,13 @@ GEM
     faraday (0.17.3)
       multipart-post (>= 1.2, < 3)
     ffaker (2.10.0)
-    ffi (1.12.2)
-    i18n (1.8.2)
+    ffi (1.13.1)
+    i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
     jaro_winkler (1.5.2)
     json (2.3.1)
-    minitest (5.14.1)
+    minitest (5.14.2)
     multipart-post (2.1.1)
     parallel (1.13.0)
     parser (2.5.3.0)
@@ -111,7 +111,7 @@ DEPENDENCIES
   simplecov
 
 RUBY VERSION
-   ruby 2.4.4p296
+   ruby 2.6.6p146
 
 BUNDLED WITH
    1.17.3
