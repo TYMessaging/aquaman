@@ -5,10 +5,10 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: bundle exec rspec
+  - name: Run tests
     task:
       jobs:
-        - name: bundle install
+        - name: Rspec
           commands:
             - checkout
             - sem-version ruby 2.6.6
