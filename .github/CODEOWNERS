@@ -1,0 +1,12 @@
+# Order is important. The last matching pattern has the most precedence.
+# The folders are ordered as follows:
+
+# In each subsection folders are ordered first by depth, then alphabetically.
+# This should make it easy to add new rules without breaking existing ones.
+
+# Global rule:
+* @edipox @kalivara
+
+# We can assign owners to specific folders
+# e.g.:
+# /wpf/**   @adegeo
